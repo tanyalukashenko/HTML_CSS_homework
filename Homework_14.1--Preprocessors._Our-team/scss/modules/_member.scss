@@ -1,0 +1,85 @@
+.member {
+  &__wrap {
+    padding: 75px 0;
+  }
+
+  &__photo {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid var(--yellow);
+    position: relative;
+    z-index: 0;
+
+    &::before {
+      @include size(50%, 101%);
+      @include align(false, true, absolute);
+
+      content: "";
+      top: -2px;
+      z-index: -1;
+      background-color: #fff;
+    }
+
+    &::after {
+      @include size(101%, 50%);
+      @include align(true, false, absolute);
+
+      content: "";
+      left: -2px;
+      z-index: -1;
+      background-color: #fff;
+    }
+  }
+
+  &__img {
+    width: 390px;
+    border: 1px solid var(--yellow);
+  }
+
+  &__center {
+    position: relative;
+
+    &::before {
+      @include size(1px, 100%);
+      @include pos($pos: absolute, $l: 0);
+
+      content: "";
+      background-color: var(--yellow);
+    }
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__name {
+    font: 900 36px $font-Roboto;
+    color: #666666;
+    margin-bottom: 65px;
+    position: relative;
+
+    &:after {
+      @include size(100px, 1px);
+      @include align(false, true, absolute);
+
+      content: "";
+      bottom: -30px;
+      background-color: var(--yellow);
+    }
+  }
+
+  &__position {
+    font-size: 24px;
+    font-weight: 400;
+    color: #666666;
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 24px;
+    margin: 30px 0 20px;
+  }
+}

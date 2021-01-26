@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;500&family=Roboto:wght@900&display=swap");
+:root {
+  --yellow: #ffcc00;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.arrow {
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 40px;
+  color: var(--yellow);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.arrow:hover {
+  background-color: #ededed;
+}
+
+.divider {
+  width: 20px;
+  height: 4px;
+  background-color: var(--yellow);
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.divider::before, .divider::after {
+  width: 10px;
+  height: 4px;
+  position: absolute;
+  content: "";
+  background-color: inherit;
+}
+
+.divider::before {
+  left: -15px;
+}
+
+.divider::after {
+  left: 25px;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider__item {
+  width: 12px;
+  height: 12px;
+  border-color: #fff;
+  background-color: var(--yellow);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  margin-bottom: 95px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.slider__item:first-child, .slider__item--hover:hover {
+  background-color: #fff;
+  border: 1px solid var(--yellow);
+}
+
+.header {
+  text-align: center;
+  padding-top: 55px;
+}
+
+.header__text {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #898f8f;
+  margin-bottom: 10px;
+}
+
+.header__title {
+  font: 900 60px "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 40px;
+}
+
+.line {
+  width: 450px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.line::before, .line::after {
+  width: 45%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "";
+  background-color: var(--yellow);
+}
+
+.line::before {
+  left: 0;
+}
+
+.line::after {
+  right: 0;
+}
+
+.line__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.member__wrap {
+  padding: 75px 0;
+}
+
+.member__photo {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid var(--yellow);
+  position: relative;
+  z-index: 0;
+}
+
+.member__photo::before {
+  width: 50%;
+  height: 101%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  content: "";
+  top: -2px;
+  z-index: -1;
+  background-color: #fff;
+}
+
+.member__photo::after {
+  width: 101%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "";
+  left: -2px;
+  z-index: -1;
+  background-color: #fff;
+}
+
+.member__img {
+  width: 390px;
+  border: 1px solid var(--yellow);
+}
+
+.member__center {
+  position: relative;
+}
+
+.member__center::before {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  content: "";
+  background-color: var(--yellow);
+}
+
+.member__info {
+  text-align: center;
+}
+
+.member__name {
+  font: 900 36px "Roboto", sans-serif;
+  color: #666666;
+  margin-bottom: 65px;
+  position: relative;
+}
+
+.member__name:after {
+  width: 100px;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  content: "";
+  bottom: -30px;
+  background-color: var(--yellow);
+}
+
+.member__position {
+  font-size: 24px;
+  font-weight: 400;
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.member__description {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  line-height: 24px;
+  margin: 30px 0 20px;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social__item {
+  width: 30px;
+  height: 30px;
+  color: #cccccc;
+  border: 2px solid;
+  border-radius: 50%;
+  margin: 0 3px;
+  line-height: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.social__item:hover {
+  color: var(--yellow);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font: 900 14px "Open Sans", sans-serif;
+  color: #666666;
+  text-transform: uppercase;
+  border: 1px solid var(--yellow);
+  padding: 6px 11px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  -webkit-box-shadow: 0 0 7px 0 rgba(102, 102, 102, 0.5);
+          box-shadow: 0 0 7px 0 rgba(102, 102, 102, 0.5);
+}
+/*# sourceMappingURL=styles.min.css.map */

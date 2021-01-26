@@ -1,0 +1,769 @@
+@import "./base";
+@import "./variables";
+@import "./layout";
+
+
+// HEADER
+header {
+  background: url('../img/header.png') center no-repeat;
+  background-size: cover;
+
+  .header-content {
+    @extend %flex-center;
+    flex-direction: column;
+    padding-top: 200px;
+    margin-bottom: 150px;
+  }
+
+  .logo {
+    @extend %logo;
+    margin-bottom: 50px;
+    color: map-get($color, 'primary-text');
+
+    &-title {
+      @extend %logo-title;
+      font-size: 54px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    &-subtitle {
+      @extend %logo-subtitle;
+      font-size: 36px;
+      font-weight: 300;
+    }
+  }
+
+  .search {
+    @extend %d-flex;
+    @extend %justify-center;
+    flex-wrap: wrap;
+    margin-bottom: 90px;
+    width: 600px;
+    height: 50px;
+    position: relative;
+
+    &-text {
+      border: none;
+      min-width: 600px;
+      padding: 5px 50px;
+
+      &:hover {
+        opacity: .9;
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: darken(map-get($color, 'primary-text'), 10%);
+      }
+
+      &::placeholder {
+        color: map-get($color, 'placeholder-text');
+        text-transform: map-get($text-transform, 'placeholder');
+        letter-spacing: 3px;
+      }
+    }
+
+    &-btn {
+      @extend %flex-center;
+      @extend %search-btn;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      bottom: 2px;
+    }
+
+    &-icon {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  }
+
+  .scroll {
+
+    &-text {
+      @extend %flex-center;
+      flex-direction: column;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: map-get($color, 'primary-text');
+      text-transform: map-get($text-transform, 'scroll');
+      letter-spacing: 1px;
+
+      &:hover,
+      &:active {
+        opacity: .7;
+        cursor: pointer;
+      }
+    }
+
+    &-icon {
+      font-size: 24px;
+    }
+  }
+}
+
+// MAIN-NAV
+nav {
+  background: map-get($color, 'main-nav-bg');
+  background-size: cover;
+}
+
+.main-nav {
+  @extend %d-flex;
+  @extend %align-items-center;
+  @extend %justify-space-between;
+  padding: 30px 0;
+
+  &.open {
+    flex-direction: column;
+
+    .toggle-btn {
+      .hamburger-menu {
+        display: none;
+      }
+
+      .close {
+        display: inline-block;
+      }
+    }
+  }
+
+  &-content {
+    @extend %d-flex;
+    @extend %align-items-center;
+    @extend %justify-space-between;
+  }
+
+  &-logo {
+    @extend %logo;
+    @extend %logo-title;
+    font-size: 24px;
+    font-weight: 400;
+    color: map-get($color, 'primary-text');
+  }
+
+  .toggle-btn {
+    display: none;
+    font-size: 32px;
+    color: map-get($color, 'desc-text');
+    cursor: pointer;
+
+    &:hover {
+      color: darken(map-get($color, 'desc-text'), 70%);
+    }
+
+    .hamburger-menu {
+      display: inline-block;
+    }
+
+    .close {
+      display: none;
+    }
+  }
+
+  &-list {
+    @extend %flex-center;
+
+    .open & {
+      @extend %d-flex;
+      flex-direction: column;
+      margin-top: 10px;
+      border-top: 1px solid map-get($color, 'menu-divider');
+      border-bottom: 1px solid map-get($color, 'menu-divider');
+      width: 100%;
+    }
+  }
+
+  &-item {
+    text-transform: map-get($text-transform, 'main-nav');
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    .open & {
+      margin-right: 0;
+      margin-bottom: 15px;
+
+      &:first-child {
+        margin-left: 10px;
+      }
+
+      &:last-child {
+        margin-bottom: 15px;
+      }
+    }
+
+    &:hover {
+      color: darken(map-get($color, 'primary-text'), 30%);
+    }
+  }
+
+  &-link {
+    color: map-get($color, 'primary-text');
+
+    &:hover {
+      color: darken(map-get($color, 'primary-text'), 20%);
+    }
+  }
+}
+
+// CHOOSE-US
+.choose-us {
+  background: url('../img/section1.png') center no-repeat;
+  background-size: cover;
+
+  &-content {
+    @extend %d-flex;
+    @extend %align-items-center;
+    @extend %justify-space-between;
+    flex-wrap: wrap;
+    padding: 50px 0;
+
+    .left-card {
+      width: 50%;
+
+      &-title {
+        @extend %card-title;
+      }
+
+      &-desc {
+        @extend %card-desc;
+        padding-right: 20px;
+      }
+
+      &-btn {
+        margin: 30px 0 50px;
+        @extend %section-btn;
+      }
+    }
+
+    .right-card {
+      padding-bottom: 20px;
+      width: 50%;
+      @extend %d-flex;
+      flex-direction: column;
+
+      & div {
+        display: inline;
+      }
+
+      & div:first-child {
+        align-self: flex-start;
+      }
+
+      & div:last-child {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+// NAV
+.section-nav {
+  background: map-get($color, 'section-bg');
+  background-size: cover;
+
+  .svg {
+    padding-top: 150px;
+    min-height: 40px;
+    background: url('../icons/shape.svg') center no-repeat;
+  }
+
+  &-list {
+    background-color: map-get($color, 'section-bg');
+    margin-top: -70px;
+    @extend %d-flex;
+    @extend %align-items-center;
+    @extend %justify-space-around;
+  }
+
+  &-item {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  &-link {
+    font-size: 48px;
+
+    &:hover,
+    &:active {
+      opacity: .7;
+    }
+  }
+
+  &-icon.fa-search {
+    color: map-get($color, 'icon-search');
+  }
+
+  &-icon.fa-check-circle {
+    color: map-get($color, 'icon-select');
+  }
+
+  &-icon.fa-thumbs-up {
+    color: map-get($color, 'icon-book');
+  }
+
+  &-desc {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 400;
+    color: map-get($color, 'primary-text');
+    text-transform: map-get($text-transform, 'secondary-nav');
+  }
+}
+
+// DESTINATIONS
+.destination {
+
+  .card {
+    width: 50%;
+    padding: 150px 0 80px;
+
+    &-content {
+      padding: 30px 20px;
+      background-color: rgba(map-get($color, 'section-bg'), $alpha: 0.9);
+    }
+
+    &-title {
+      @extend %article-title;
+    }
+
+    &-subtitle {
+      @extend %article-subtitle;
+    }
+
+    &-desc {
+      @extend %desc;
+      margin-bottom: 50px;
+    }
+
+    &-btn {
+      @extend %section-btn;
+      opacity: 1;
+    }
+  }
+
+  &-spain {
+    &:first-of-type {
+      background: url('../img/section3-article1.png') center no-repeat;
+      background-size: cover;
+    }
+
+    &:last-of-type {
+      background: url('../img/section3-article2.png') center no-repeat;
+      background-size: cover;
+    }
+
+    &-content {
+      @extend %d-flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+// TESTIMONIAL
+.testimonial {
+  background: url('../img/section5.png') center no-repeat;
+  background-size: cover;
+
+  .card {
+    &-title {
+      @extend %card-title;
+      text-align: center;
+      padding: 120px 0 50px;
+    }
+
+    &-content {
+      @extend %d-flex;
+      @extend %justify-center;
+      padding-bottom: 140px;
+    }
+
+    .wrapper {
+      max-height: 300px;
+    }
+
+    &-img {
+      height: 300px;
+      max-height: 300px;
+    }
+
+    &-text {
+      background-color: map-get($color, 'testimonial-bg');
+      padding: 30px 50px 20px;
+      min-height: 300px;
+
+      &-title {
+        @extend %article-subtitle;
+      }
+
+      &-desc {
+        @extend %card-desc;
+      }
+
+      &-quotes {
+        font-size: 20px;
+        color: map-get($color, 'btn-primary');
+      }
+    }
+  }
+}
+
+//FOOTER
+footer {
+  background-color: map-get($color, 'section-bg');
+  background-size: cover;
+
+  .logo {
+    @extend %logo;
+    padding-top: 40px;
+    color: map-get($color, 'primary-text');
+
+    &-title {
+      @extend %logo-title;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    &-subtitle {
+      margin-bottom: 20px;
+      @extend %logo-subtitle;
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+
+  .social {
+    @extend %flex-center;
+
+    a {
+      margin-bottom: 20px;
+      color: map-get($color, 'primary-text');
+
+      &:visited {
+        color: map-get($color, 'primary-text');
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+    }
+
+    &-icon {
+      font-size: 24px;
+
+      &:hover,
+      &:active {
+        color: map-get($color, 'btn-primary');
+        transition: color .3s ease-in;
+      }
+    }
+  }
+}
+
+//RESPONSIVENESS
+@media screen and (max-width: map-get($breakpoints, 'xl')) {
+  .choose-us {
+    .right-card {
+      & div {
+        align-items: center;
+        margin: auto;
+      }
+    }
+  }
+
+  .testimonial {
+    .card {
+      &-content {
+        flex-wrap: wrap;
+
+        & div:first-child {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, 'lg')) {
+  .svg {
+    display: none;
+  }
+
+  .choose-us {
+    .right-card {
+      & div {
+        align-items: center;
+        margin: auto;
+      }
+    }
+  }
+
+  .section-nav-list {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, 'md')) {
+  header {
+    .search {
+      width: 500px;
+
+      &-text {
+        min-width: 500px;
+        height: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      &-btn {
+        position: relative;
+        height: 50px;
+      }
+    }
+  }
+
+  .main-nav {
+    &-content {
+      width: 100%;
+    }
+
+    .toggle-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    &-list {
+      display: none;
+    }
+
+    &-item {
+      .open & {
+        &:first-child {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  .destination {
+    .card {
+      width: 100%
+    }
+  }
+
+  .choose-us {
+    padding-bottom: 50px;
+
+    .left-card,
+    .right-card {
+      width: 100%;
+    }
+  }
+
+  .testimonial {
+    .card {
+      &-content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, 'sm')) {
+  header {
+    .header-content {
+      padding-top: 110px;
+      margin-bottom: 70px;
+    }
+
+    .search {
+      width: 400px;
+
+      &-text {
+        min-width: 400px;
+        height: 50px;
+        margin-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+      }
+
+      &-btn {
+        position: relative;
+        height: 50px;
+      }
+    }
+  }
+
+  .choose-us {
+    .right-card {
+      &-image {
+        max-width: 270px;
+      }
+    }
+  }
+
+  .section-nav {
+    &-list {
+      flex-wrap: wrap;
+    }
+  }
+
+  .destination {
+    .card {
+      padding: 70px 0 50px;
+    }
+  }
+
+  .testimonial {
+    .card {
+
+      &-title {
+        padding-top: 70px;
+        padding-bottom: 0;
+      }
+
+      &-content {
+        padding-bottom: 50px;
+      }
+
+      &-text,
+      &-img {
+        width: 400px;
+        max-width: 400px;
+      }
+
+      &-text {
+        padding: 10px 30px;
+      }
+
+      &-img {
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, 'xs')) {
+  header {
+    .logo {
+      &-title {
+        font-size: 42px;
+      }
+
+      &-subtitle {
+        line-height: 40px;
+      }
+    }
+
+    .search {
+      width: 300px;
+
+      &-text {
+        min-width: 300px;
+        height: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      &-btn {
+        position: relative;
+        height: 50px;
+      }
+    }
+  }
+
+  .section-nav {
+    &-list {
+      padding-top: 20px;
+    }
+
+    &-link {
+      font-size: 32px;
+    }
+
+    &-desc {
+      font-size: 24px;
+    }
+  }
+
+  .testimonial {
+    .card {
+      &-title {
+        line-height: 36px;
+      }
+
+      &-text,
+      &-img {
+        width: 300px;
+        max-width: 300px;
+      }
+
+      &-img {
+        height: auto;
+      }
+    }
+  }
+}
+
+// WHY-CHOOSE-US
+@media screen and (min-width: map-get($breakpoints, 'xl')) and (max-width: map-get($breakpoints, 'xxxl')) {
+  .svg {
+    width: 1110px;
+  }
+}
+
+// BOOTSTRAP - CONTAINER 
+.container {
+  @media screen and (min-width: map-get($breakpoints, 'xxs')) {
+    max-width: 300px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'xs')) {
+    max-width: 430px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'sm')) {
+    max-width: 540px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'md')) {
+    max-width: 720px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'lg')) {
+    max-width: 960px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'xl')) {
+    max-width: 1140px;
+  }
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+
+  .search {
+    &-text {
+      &:-ms-input-placeholder {
+        color: map-get($color, 'placeholder-text');
+        padding-left: 40px;
+        text-transform: map-get($text-transform, 'placeholder');
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .card-btn,
+  .left-card-btn {
+    background: map-get($color, 'btn-primary');
+
+    &:hover {
+      background: darken(map-get($color, 'btn-primary'), 10%);
+    }
+  }
+}

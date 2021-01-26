@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/ade0067c92.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/ffx7yni.css">
+    <title>Nike</title>
+</head>
+
+<body>
+    <main class="page">
+
+        <div class="card">
+
+            <div class="preview">
+                <a href="#"><img src="img/logo.png" alt="Nike logo" class="logo"></a>
+
+                <div class="product-slider">
+                    <div class="product-slider__view slider-view">
+                        <form action="#">
+                            <ul class="slider-view__images">
+                                <li class="slider-view__item">
+                                    <input type="radio" name="slide" id="slide_1" class="slider-view__radio" checked>
+                                    <img src="img/black.png" alt="Nike SB Stefan Janoski Max color black"
+                                        class="slider-view__img">
+                                </li>
+                                <li class="slider-view__item">
+                                    <input type="radio" name="slide" id="slide_2" class="slider-view__radio">
+                                    <img src="img/white.png" alt="Nike SB Stefan Janoski Max color white"
+                                        class="slider-view__img">
+                                </li>
+                                <li class="slider-view__item">
+                                    <input type="radio" name="slide" id="slide_3" class="slider-view__radio">
+                                    <img src="img/red.png" alt="Nike SB Stefan Janoski Max color red"
+                                        class="slider-view__img">
+                                </li>
+                                <li class="slider-view__item">
+                                    <input type="radio" name="slide" id="slide_4" class="slider-view__radio">
+                                    <img src="img/turquoise.png" alt="Nike SB Stefan Janoski Max color turquoise"
+                                        class="slider-view__img">
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <div class="product-slider__control slider-control">
+                        <label for="slide_1" class="slider-control__item">
+                            <div class="slider-control__indicator slider-control__indicator--black"></div>
+                        </label>
+                        <label for="slide_2" class="slider-control__item">
+                            <div class="slider-control__indicator slider-control__indicator--white"></div>
+                        </label>
+                        <label for="slide_3" class="slider-control__item">
+                            <div class="slider-control__indicator slider-control__indicator--red"></div>
+                        </label>
+                        <label for="slide_4" class="slider-control__item">
+                            <div class="slider-control__indicator slider-control__indicator--turquoise"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="customize">
+                <h2 class="product-name">
+                    Nike SB Stefan Janoski Max
+                </h2>
+                <p class="product-description">Unisex Skateboarding Shoe</p>
+                <div class="rating">
+                    <i class="rating-item--solid fas fa-star"></i><i class=""></i>
+                    <i class="rating-item--solid fas fa-star"></i><i class=""></i>
+                    <i class="rating-item--solid fas fa-star"></i><i class=""></i>
+                    <i class="rating-item fas fa-star"></i><i class=""></i>
+                    <i class="rating-item fas fa-star"></i>
+                </div>
+
+                <form action="" class="customize-form">
+                    <select name="size" id="size" class="select-size" required>
+                        <option value="" selected="selected" hidden="">Size</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+
+                    <select name="quantity" id="quantity" class="select-quantity" required>
+                        <option value="" selected="selected" hidden="">Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <button type="submit" class="button button--cart">
+                        Add to cart
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

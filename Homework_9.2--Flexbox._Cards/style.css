@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "Hans Kendrick";
+    src: url(fonts/HansKendrick-Regular.otf);
+    font-weight: 500;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    background-color: #e2e7ec;
+}
+
+.container {
+    max-width: 1120px;
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.item-big {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(img/img1.png);
+    min-width: 740px;
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.item-big .date {
+    letter-spacing: 0.33px;
+    color: #ffffff;
+    opacity: 0.5;
+    margin: 0 0 23px 46px;
+}
+
+.item-big .article-link {
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 40px 43px;
+}
+
+.item-small {
+    width: min-content;
+}
+
+.date {
+    font-family: "Hans Kendrick", sans-serif;
+    text-transform: uppercase;
+    color: #818181;
+    margin: 28px 0 0 28px;
+}
+
+.article-link {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #1d1d1d;
+    margin: 20px 28px 0 28px;
+}
+
+.profile-pic {
+    margin: 70px 0 25px 28px;
+}
+
+.more-content {
+    max-width: fit-content;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.more-content p {
+    color: #99a5b0;
+    margin-left: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+}

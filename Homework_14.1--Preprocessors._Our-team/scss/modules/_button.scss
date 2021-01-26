@@ -1,0 +1,14 @@
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font: 900 14px $font-OpenSans;
+  color: #666666;
+  text-transform: uppercase;
+  border: 1px solid var(--yellow);
+  padding: 6px 11px;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 7px 0 rgba(102, 102, 102, 0.5);
+  }
+}

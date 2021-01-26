@@ -1,0 +1,53 @@
+body {
+  font-size: 18px;
+}
+
+.container {
+  width: 759px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #a52a2a;
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+main p {
+  margin: 20px 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 600;
+}
+.blue {
+  color: blue;
+}
+
+.images {
+  text-align: center;
+}
+
+.images img {
+  border: 2px dashed black;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  height: 24px;
+  padding-top: 1px;
+}

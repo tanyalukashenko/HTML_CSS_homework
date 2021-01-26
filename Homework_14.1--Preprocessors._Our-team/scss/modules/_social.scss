@@ -1,0 +1,21 @@
+.social {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    @include size(30px);
+
+    color: #cccccc;
+    border: 2px solid;
+    border-radius: 50%;
+    margin: 0 3px;
+    line-height: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--yellow);
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,131 @@
+$breakpoints: ('xxs': 320px,
+  'xs': 450px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1440px,
+  'xxxl': 1800px,
+);
+
+$text-transform: ('logo-title': uppercase,
+  'logo-subtitle': capitalize,
+  'main-nav': uppercase,
+  'secondary-nav': capitalize,
+  'card-title': capitalize,
+  'card-subtitle': uppercase,
+  'scroll': capitalize,
+  'placeholder': capitalize,
+  'btn': uppercase,
+);
+
+$color: ('btn-primary': #5474fd,
+  'btn-secondary': #496bfe,
+  'main-nav-bg': #5474fd,
+  'section-bg': #232323,
+  'testimonial-bg': #333,
+  'primary-text': #fff,
+  'desc-text': #e8e8e8,
+  'h3': #fefefe,
+  'placeholder-text': #999,
+  'icon-book': #00a2ff,
+  'icon-select': #ff6363,
+  'icon-search': #5474fd,
+  'menu-divider': #fff,
+);
+
+%logo {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+%logo-title {
+  text-transform: map-get($text-transform, 'logo-title');
+}
+
+%logo-subtitle {
+  text-transform: map-get($text-transform, 'logo-subtitle');
+}
+
+%btn {
+  width: 200px;
+  padding: 15px 0;
+  border: none;
+  font-family: 'Aleo', serif;
+  color: map-get($color, 'primary-text');
+  font-weight: 400;
+  text-align: center;
+  text-transform: map-get($text-transform, 'btn');
+  letter-spacing: 1px;
+  transition: .1s ease-in;
+
+  &:active {
+    box-shadow: inset 0 0 3px map-get($color, 'primary-text');
+  }
+}
+
+%section-btn {
+  @extend %btn;
+  font-size: 16px;
+  background: linear-gradient(45deg, map-get($color, 'btn-secondary') 70px, map-get($color, 'btn-primary') 70px);
+  background: -ms-linear-gradient(45deg, map-get($color, 'btn-secondary') 70px, map-get($color, 'btn-primary') 70px);
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(45deg, darken(map-get($color, 'btn-secondary'), 10%) 70px, darken(map-get($color, 'btn-primary'), 10%) 70px);
+    background: -ms-linear-gradient(45deg, darken(map-get($color, 'btn-secondary'), 10%) 70px, darken(map-get($color, 'btn-primary'), 10%) 70px);
+  }
+}
+
+%search-btn {
+  @extend %btn;
+  font-size: 14px;
+  background: map-get($color, 'btn-primary');
+
+  &:hover,
+  &:focus {
+    background: darken(map-get($color, 'btn-primary'), 10%);
+  }
+}
+
+%title {
+  margin-bottom: 30px;
+  color: map-get($color, 'h3');
+}
+
+%desc {
+  font-family: "Josefin Sans", sans-serif;
+  color: map-get($color, 'desc-text');
+  font-size: 18px;
+  font-weight: 300;
+}
+
+%article {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+%card-title {
+  @extend %title;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: map-get($text-transform, 'card-title');
+}
+
+%card-desc {
+  @extend %desc;
+  margin-bottom: 15px;
+}
+
+%article-title {
+  @extend %title;
+  @extend %article;
+  text-transform: map-get($text-transform, 'card-title');
+}
+
+%article-subtitle {
+  @extend %title;
+  @extend %article;
+  text-transform: map-get($text-transform, 'card-subtitle');
+}
